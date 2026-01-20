@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .contact-section {
+            padding: 80px 16px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            width: 100%;
+            gap: 16px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 16px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            resize: vertical;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 8px rgba(56,189,248,0.4);
+            outline: none;
+        }
+
+        .contact-form button {
+            padding: 16px 28px;
+            font-size: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-form button:hover {
+            background: #0ea5e9;
+            transform: scale(1.05);
+        }
+
+        .contact-info {
+            max-width: 300px;
+            width: 100%;
+            font-size: 16px;
+            color: #0f172a;
+            line-height: 1.6;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container header__inner">
+        <div class="logo">
+            <img src="img/logo.jpg" alt="CutFrame logo">
+            <span class="logo__text">CUTFRAME</span>
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="courses.html">Курсы</a>
+            <a href="contacts.html" class="active">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="contact-section container">
+        <!-- Форма -->
+        <form class="contact-form">
+            <h2>Связаться с нами</h2>
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="email" placeholder="Ваш email" required>
+            <textarea placeholder="Ваше сообщение" rows="6" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+
+        <!-- Контакты -->
+        <div class="contact-info">
+            <h2>Наши контакты</h2>
+            <p>Email: <a href="mailto:cutframe@gmail.com">cutframe@gmail.com</a></p>
+            <p>Telegram: <a href="https://t.me/cutframe" target="_blank">@cutframe</a></p>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer__inner">
+        <p>© 2026 CutFrame. Все права защищены.</p>
+    </div>
+</footer>
+
+</body>
+</html>

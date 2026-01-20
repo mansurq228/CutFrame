@@ -1,0 +1,428 @@
+/* ---------- NAV ---------- */
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #e5e7eb;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #38bdf8;
+}
+
+.nav a.active {
+  color: #38bdf8;
+}
+
+/* ---------- LOGO ---------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+}
+
+.logo__text {
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+/* ---------- INFO CARDS ---------- */
+.info__card {
+  background: #f1f3f9;
+  border-radius: 16px;
+  padding: 24px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.info__card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.info__card p {
+  font-size: 15px;
+  color: #475569;
+}
+
+.info__link {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 500;
+  color: #38bdf8;
+  transition: transform 0.3s ease;
+}
+
+.info__link:hover {
+  transform: translateX(6px);
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn--primary {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+}
+
+/* ---------- EXAMPLES PAGE ---------- */
+.examples-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* затемняющий слой для читаемости */
+.examples-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.4)
+  );
+  z-index: 1;
+}
+
+/* фон AE / CapCut */
+.examples-bg {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  filter: blur(10px); /* меньше блюра */
+  opacity: 0.25;
+}
+
+.examples-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.examples-bg--ae {
+  left: 0;
+  background: #1e2a5a;
+}
+
+.examples-bg--capcut {
+  right: 0;
+  background: #ffffff;
+}
+
+/* контент поверх */
+.examples-content {
+  position: relative;
+  z-index: 2;
+  padding: 120px 0;
+  text-align: center;
+}
+
+.examples-content h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.examples-content p {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+/* ---------- BACK BUTTON ---------- */
+.btn--back {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.35s ease;
+}
+
+
+.btn--back:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateX(-6px);
+}
+
+/* ---------- EDITS GRID ---------- */
+.examples-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+/* карточка эдита */
+.edit-card {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.edit-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left; 
+}
+
+.edit-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+.examples-content,
+.examples-content * {
+  position: relative;
+  z-index: 3;
+}
+.hero__buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn--secondary {
+  background: transparent;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.btn--secondary:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+.editor-page {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.editor-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  filter: blur(4px); /* 👈 очень маленький blur */
+  opacity: 0.25;
+  z-index: 1;
+}
+.editor-page--ae {
+  background: #0f172a;
+  color: #ffffff;
+}
+.editor-page--ae::before {
+  background-image: url("../img/AElogo.png");
+}
+.editor-page--cc {
+  background: #f5f7fb;
+  color: #1f2933;
+}
+.editor-page--cc::before {
+  background-image: url("../img/capcutlogo.png");
+}
+
+.editor-content img {
+  width: 160px;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.35));
+}
+
+.editor-content {
+  text-align: left;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+.editor-content p {
+  max-width: 600px;
+  margin-left: 0;
+  opacity: 0.9;
+}
+
+.editor-content h1 {
+  font-size: 48px;
+}
+
+.editor-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.editor-list li {
+  margin-bottom: 10px;
+}
+.btn--editor {
+  background: rgba(255,255,255,0.15);
+  color: #000000;
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.3s ease;
+}
+
+.btn--editor:hover {
+  background: #38bdf8;
+  color: #0f172a;
+  border-color: #38bdf8;
+  transform: translateY(-3px);
+}
+
+/* ===== EDITOR PAGES ===== */
+.editor {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.editor--ae {
+  background: linear-gradient(135deg, #0f172a, #1e2a5a);
+  color: #fff;
+}
+
+.editor--cc {
+  background: linear-gradient(135deg, #ffffff, #f1f3f9);
+  color: #1f2933;
+}
+
+.editor__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.editor__text h1 {
+  font-size: 52px;
+  margin-bottom: 16px;
+}
+
+.editor__text p {
+  font-size: 18px;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+.editor__text ul {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.editor__text li {
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.editor__text li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #38bdf8;
+}
+
+.editor__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editor__visual img {
+  width: 320px;          /* одинаковый размер */
+  max-width: 100%;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.35));
+}
+
+/* адаптив */
+@media (max-width: 900px) {
+  .editor__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .editor__visual {
+    order: -1;
+    margin-bottom: 40px;
+  }
+}
+.course-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 24px;
+  border-radius: 16px;
+  background: #f1f3f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.course-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.course-card p {
+  font-size: 15px;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.course-price {
+  font-weight: 700;
+  font-size: 18px;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.course-card .btn {
+  align-self: flex-start;
+}
+
+
+
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
